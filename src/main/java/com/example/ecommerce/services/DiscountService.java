@@ -10,7 +10,12 @@ import java.util.Optional;
 @Service
 public class DiscountService {
     private int defaultDiscountNumber =2;
+
+
     public boolean checkDiscount(Cart userCart, int totalOrders, int discountNumber){
+        if(totalOrders==0) {
+            return false;
+        }
         if(totalOrders%discountNumber==0){
             return true;
         }

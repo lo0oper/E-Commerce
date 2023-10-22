@@ -97,9 +97,8 @@ public class OrderController {
                 discountList.add(newDiscount);
                 discountCodes.add(discountCode);
             }
-
         }else{
-            return ResponseEntity.status(HttpStatus.OK).body("No Dis");
+            return ResponseEntity.status(HttpStatus.OK).body("No discount is eligible for you currently. Try buying more stuff");
         }
         Map<String,String> response = new HashMap<>();
         response.put("message",discountMessage);

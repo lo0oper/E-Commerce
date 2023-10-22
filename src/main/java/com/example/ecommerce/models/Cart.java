@@ -15,4 +15,8 @@ public class Cart {
     private String userID;
     private List<Discount> discounts;
     private int totalCost;
+
+    public Cart() {
+
+    }
 }

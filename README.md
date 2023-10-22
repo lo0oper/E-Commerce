@@ -2,6 +2,9 @@
 1. There are unlimited items of each type
 2. User has unlimited money to but any item
 
+## VIDEO DEMO:
+1. Application Demo: [Link](https://www.loom.com/share/a3ba7993377a45c4947a50f16eb3f2a0)
+2. UnitTests Demo: [Link](https://www.loom.com/share/a3ba7993377a45c4947a50f16eb3f2a0?highlightComment=21355778&t=3)
 
 ### Instructions
  - This is a basic E-commerce application with in memory-databse.

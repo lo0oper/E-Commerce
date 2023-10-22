@@ -13,5 +13,6 @@ public class Cart {
     private String cartId;
     private List<Item> itemList;
     private String userID;
-    private Discount discount;
+    private List<Discount> discounts;
+    private int totalCost;
 }

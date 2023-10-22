@@ -1,25 +1,22 @@
 package com.example.ecommerce.controllers;
 
+import java.util.HashMap;
 
+import com.example.ecommerce.exceptions.ItemNotFoundException;
 import com.example.ecommerce.exceptions.UserCreationException;
-import com.example.ecommerce.models.Item;
-import com.example.ecommerce.models.User;
+import com.example.ecommerce.models.*;
+import com.example.ecommerce.services.DiscountService;
+import com.example.ecommerce.services.ItemService;
 import com.example.ecommerce.services.UserService;
-import com.example.ecommerce.services.UtilService;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.expression.spel.ast.Literal;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 
 @RestController
@@ -27,12 +24,15 @@ import java.util.Optional;
 public class UserController {
 
    private final UserService userService;
+   private final ItemService itemService;
+
    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
    @Autowired
-   public UserController(UserService userService){
+   public UserController(UserService userService, ItemService itemService, DiscountService discountService){
       this.userService = userService;
+      this.itemService = itemService;
 
    }
 

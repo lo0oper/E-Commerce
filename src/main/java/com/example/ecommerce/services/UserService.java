@@ -35,10 +35,12 @@ public class UserService {
             String cartID = UtilService.generateRandomUserID();
             List<Item> itemList = new ArrayList<>();
             String userId = Integer.toString(userList.size()+1);
-            String discountID = UtilService.generateRandomUserID();
-            Discount userDiscount = new Discount(discountID,0,cartID);
-            Cart userCart = new Cart(cartID,itemList,userId,userDiscount);
-            User newUser = new User(userId,userCart,email);
+            String discountId = UtilService.generateRandomUserID();
+            Discount userDiscount = new Discount(discountId,0,cartID,userId,discountId);
+            List<Discount> discountList = new ArrayList<>();
+            discountList.add(userDiscount);
+            Cart userCart = new Cart(cartID,itemList,userId,discountList,0);
+            User newUser = new User(userId,userCart,email,0);
             userList.add(newUser);
             return newUser;
         }catch(Exception e){

@@ -10,5 +10,7 @@ import lombok.Setter;
 public class Discount {
     private String discountId;
     private int discountAmount;
-    private String CartId;
+    private String cartId;
+    private String userId;
+    private String discountCode;
 }

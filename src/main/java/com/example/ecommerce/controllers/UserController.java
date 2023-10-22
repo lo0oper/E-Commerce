@@ -67,7 +67,7 @@ public class UserController {
          logger.info("Post /user endpoint invoked with "+ request);
          String email = request.get("email");
          User newUser = userService.createUser(email);
-         return ResponseEntity.status(HttpStatus.CREATED).body("User:"+newUser);
+         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
       } catch (UserCreationException ex) {
          return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
       }

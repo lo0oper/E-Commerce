@@ -2,8 +2,10 @@ package com.example.ecommerce.controllers;
 
 
 import com.example.ecommerce.exceptions.UserCreationException;
+import com.example.ecommerce.models.Item;
 import com.example.ecommerce.models.User;
 import com.example.ecommerce.services.UserService;
+import com.example.ecommerce.services.UtilService;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,5 +76,11 @@ public class UserController {
    }
 
 
+   @PostMapping("/item")
+   public ResponseEntity<Object> createItem(@RequestBody Item item){
+      logger.info("create item endpoint invoked with Cost: " + item.getCost() +", ItemType: "+ item.getItemType());
+
+      return ResponseEntity.status(HttpStatus.OK).body("Item not created yet");
+   }
 
 }

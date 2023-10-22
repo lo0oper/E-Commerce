@@ -10,4 +10,9 @@ public class UtilService {
         UUID uuid = UUID.randomUUID();
         return uuid.toString().replace("-", "");
     }
+
+    public static String objectToString(Object obj) {
+        // Use String.format to convert the object to a string
+        return String.format("ObjectToString: %s", obj.toString());
+    }
 }

@@ -9,5 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Item {
     private String itemId;
+    private String ItemType;
     private int cost;
 }

@@ -76,11 +76,6 @@ public class UserController {
    }
 
 
-   @PostMapping("/item")
-   public ResponseEntity<Object> createItem(@RequestBody Item item){
-      logger.info("create item endpoint invoked with Cost: " + item.getCost() +", ItemType: "+ item.getItemType());
 
-      return ResponseEntity.status(HttpStatus.OK).body("Item not created yet");
-   }
 
 }
